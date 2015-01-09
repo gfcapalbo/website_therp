@@ -8,3 +8,7 @@ class Academy(http.Controller):
         return http.request.render('website_therp.index',{
             'teachers': Teachers.search([]),
         })
+
+    @http.route('/academy/<name>/',auth='public',website=True)
+    def teacher(self,name):
+        return '<h1>{}</h1>'.format(name)
