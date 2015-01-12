@@ -9,7 +9,9 @@ class Academy(http.Controller):
             'teachers': Teachers.search([]),
         })
 
-    @http.route('/academy/<int:id>/',auth='public',website=True)
-    def teacher(self,id):
-        return '<h1>{} ({})</h1>'.format(id,type(id).__name__)
-        # first bracket will accept id number, second name of the type (in this case int), all in header style
+    @http.route('/academy/<model("academy.teachers"):teacher>/',auth='public',website=True)
+    def teacher(self,teacher):
+        return http.request.render('academy.biography',{
+            'person': teacher
+        })
+    # this time i'm accepting only objects of teacher type, defined in the model'
