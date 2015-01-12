@@ -23,7 +23,10 @@
         <div class="container">
            <h3 t-field="person.name"/>
            <p>Last modified: <i t-field="person.write_date" t-field-options='{"widget": "relative"}'/></p>
-          <div t-field="person.biography"/>
+           <div t-field="person.biography"/>
+            <t t-foreach="person.course_ids" t-as="course">
+                <p><div t-esc="course.name"/></p>
+            </t>
         </div>
       </div>
       <div class="oe_structure"/>
