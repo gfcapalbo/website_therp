@@ -24,7 +24,6 @@
            <h3 t-field="person.name"/>
            <p>Last modified: <i t-field="person.write_date" t-field-options='{"widget": "relative"}'/></p>
            <div t-field="person.biography"/>
-           <t t-debug="pdb"/>
             <t t-foreach="person.course_ids" t-as="course">
                 <p><a t-attf-href="/academy/{{ slug(person) }}/{{ slug(course) }}"><div t-esc="course.name"/></a></p>
             </t>
