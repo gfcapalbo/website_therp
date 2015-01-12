@@ -11,7 +11,7 @@ class Academy(http.Controller):
 
     @http.route('/academy/<model("academy.teachers"):teacher>/',auth='public',website=True)
     def teacher(self,teacher):
-        return http.request.render('academy.biography',{
+        return http.request.render('website_therp.biography',{
             'person': teacher
         })
     # this time i'm accepting only objects of teacher type, defined in the model'
