@@ -11,4 +11,5 @@ class Courses(models.Model):
     _name = 'academy.courses'
     name = fields.Char()
     teacher_id = fields.Many2one('academy.teachers',string="Teacher")
+    extra_info = fields.Html()
 

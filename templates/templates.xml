@@ -24,8 +24,9 @@
            <h3 t-field="person.name"/>
            <p>Last modified: <i t-field="person.write_date" t-field-options='{"widget": "relative"}'/></p>
            <div t-field="person.biography"/>
+           <t t-debug="pdb"/>
             <t t-foreach="person.course_ids" t-as="course">
-                <p><div t-esc="course.name"/></p>
+                <p><a t-attf-href="/academy/{{ slug(person) }}/{{ slug(course) }}"><div t-esc="course.name"/></a></p>
             </t>
         </div>
       </div>
@@ -33,6 +34,20 @@
     </t>
   </template>
 
+  <template id="courseinfo">
+    <t t-call="website.layout">
+      <t t-set="title">Academy Courses</t>
+      <div class="oe_structure"/>
+      <div class="oe_structure">
+        <div class="container">
+           <h3 t-field="c.name"/>
+           <p>Last modified: <i t-field="c.write_date" t-field-options='{"widget": "relative"}'/></p>
+           <div t-field="c.extra_info"/>
+        </div>
+      </div>
+      <div class="oe_structure"/>
+    </t>
+  </template>
 
 </data></openerp>
 
