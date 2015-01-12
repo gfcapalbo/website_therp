@@ -10,5 +10,6 @@ Website module for educational purposes
         'templates/templates.xml',
         'data/data.xml',
         'security/ir.model.access.csv',
+        'views/views.xml',
         ],
 }
