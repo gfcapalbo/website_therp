@@ -21,7 +21,8 @@
       <div class="oe_structure"/>
       <div class="oe_structure">
         <div class="container">
-          <p><t t-esc="person.id"/> <t t-esc="person.name"/></p>
+           <h3 t-field="person.name"/>
+          <div t-field="person.biography"/>
         </div>
       </div>
       <div class="oe_structure"/>
